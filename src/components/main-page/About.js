@@ -3,10 +3,10 @@ export default function About() {
     <section id="about" className="py-24 bg-[#f8f9ff]">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-[#2c5aa0] mb-16">About Our Clinic</h2>
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+        <div className="flex flex-col items-center gap-12">
+          <div className="md:w-1/2 text-[16px] text-justify">
             <p className="text-gray-600 leading-relaxed mb-6">
-              ERS Lying-In Clinic has been serving expectant mothers and their families 
+              ERS Maternity and Pediatric Care Clinic has been serving expectant mothers and their families 
               for over a decade. We provide comprehensive maternal and newborn care 
               with a focus on safety, comfort, and personalized attention.
             </p>

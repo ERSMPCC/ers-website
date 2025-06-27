@@ -1,6 +1,6 @@
-# ERS Lying-In Clinic Website
+# ERS Maternity and Pediatric Care Clinic Website
 
-A modern, responsive website for ERS Lying-In Clinic built with React and designed for deployment on GitHub Pages.
+A modern, responsive website for ERS Maternity and Pediatric Care Clinic built with React and designed for deployment on GitHub Pages.
 
 ## 🏥 Features
 

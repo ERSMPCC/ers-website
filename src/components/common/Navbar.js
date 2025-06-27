@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50">
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header className="bg-white/4 border-b border-white/15 backdrop-blur-md shadow-md fixed w-full top-0 z-50">
+      <nav className="container mx-auto px-6 py-10 flex justify-between items-center">
         <div className="text-2xl font-bold text-[#2c5aa0]">
           <h2>ERS Maternity and Pediatric Care Clinic</h2>
         </div>

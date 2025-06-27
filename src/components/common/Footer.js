@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">ERS Lying-In Clinic</h3>
+            <h3 className="text-xl font-bold text-white mb-4">ERS Maternity and Pediatric Care Clinic</h3>
             <p className="text-gray-400">Providing quality maternal and newborn care with compassion and expertise.</p>
           </div>
           <div>
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-center text-gray-500 pt-8 mt-8 border-t border-gray-700">
-          <p>&copy; 2024 ERS Lying-In Clinic. All rights reserved.</p>
+          <p>&copy; 2024 ERS Maternity and Pediatric Care Clinic. All rights reserved.</p>
         </div>
       </div>
     </footer>
