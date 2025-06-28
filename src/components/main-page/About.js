@@ -73,7 +73,7 @@ export default function About() {
                 <FaAmbulance />
               </div>
               <h3 className="text-4xl font-bold text-blue-600 mb-2">24/7</h3>
-              <p className="text-gray-600 font-medium">Emergency Care</p>
+              <p className="text-gray-600 font-medium">Emergency Maternal Care</p>
               <p className="text-sm text-gray-500 mt-1">Always available</p>
             </div>
 

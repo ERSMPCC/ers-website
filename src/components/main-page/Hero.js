@@ -29,7 +29,8 @@ export default function Hero() {
             Professional maternal and newborn care in a comfortable, safe environment with experienced medical staff
           </p>
           
-          <div className="flex flex-nowrap justify-center gap-3 mb-12 overflow-visible">
+          {/* SOON */}
+          {/* <div className="flex flex-nowrap justify-center gap-3 mb-12 overflow-visible">
             <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-4 text-base md:text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center flex-shrink-0">
               <FaCalendarCheck className="mr-2" />
               Book Appointment
@@ -38,17 +39,17 @@ export default function Hero() {
               <FaInfoCircle className="mr-2" />
               Learn More
             </button>
-          </div>
+          </div> */}
           
           {/* Trust indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto mt-20 mb-10">
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-1">1000+</div>
               <div className="text-blue-200 text-sm">Safe Deliveries</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-1">24/7</div>
-              <div className="text-blue-200 text-sm">Emergency Care</div>
+              <div className="text-blue-200 text-sm">Emergency Maternal Care</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-1">10+</div>

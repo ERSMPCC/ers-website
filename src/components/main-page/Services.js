@@ -1,38 +1,92 @@
-import { FaFemale, FaBaby, FaUserMd, FaAmbulance, FaStethoscope, FaHeart, FaArrowRight, FaCalendarCheck, FaPhone, FaEnvelope } from 'react-icons/fa';
+"use client";
+
+import { useState } from 'react';
+import { FaFlask, FaGift, FaShieldAlt, FaStethoscope, FaCamera, FaBaby, FaUserMd, FaEye, FaFemale, FaMedkit, FaHeart, FaBed, FaArrowRight, FaCalendarCheck, FaPhone, FaEnvelope, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+import { IoEarSharp } from "react-icons/io5";
+import { GiScalpel } from "react-icons/gi";
 
 export default function Services() {
+  const [showAllServices, setShowAllServices] = useState(false);
+
   const services = [
     {
-      icon: FaFemale,
-      title: "Prenatal Care",
-      description: "Comprehensive check-ups, monitoring, and guidance throughout pregnancy with regular consultations and medical assessments."
+      icon: FaFlask,
+      title: "Laboratory Services",
+      description: "Comprehensive laboratory testing and diagnostic services including blood work, urinalysis, and other essential medical tests."
     },
     {
-      icon: FaBaby,
-      title: "Delivery Services",
-      description: "Safe, comfortable birthing environment with experienced medical staff ensuring the best care for mother and baby."
+      icon: FaGift,
+      title: "Pregnancy Packages",
+      description: "Complete pregnancy care packages designed to support expectant mothers throughout their entire pregnancy journey."
     },
     {
-      icon: FaUserMd,
-      title: "Postnatal Care",
-      description: "Complete recovery care and newborn monitoring after delivery with ongoing support for new mothers."
-    },
-    {
-      icon: FaAmbulance,
-      title: "Emergency Care",
-      description: "24/7 emergency medical services for maternal and newborn complications with immediate response capabilities."
+      icon: FaShieldAlt,
+      title: "HIV Screening",
+      description: "Confidential HIV testing and screening services with professional counseling and follow-up care as needed."
     },
     {
       icon: FaStethoscope,
-      title: "Health Consultations",
-      description: "Expert medical consultations and family planning guidance with personalized healthcare recommendations."
+      title: "Pap Smear",
+      description: "Routine cervical cancer screening tests performed by experienced healthcare professionals in a comfortable environment."
+    },
+    {
+      icon: FaCamera,
+      title: "Ultrasound",
+      description: "Advanced ultrasound imaging services for pregnancy monitoring, diagnostic imaging, and medical assessments."
+    },
+    {
+      icon: FaBaby,
+      title: "Newborn Screening",
+      description: "Comprehensive health screening for newborns to detect potential health conditions early for timely intervention."
+    },
+    {
+      icon: IoEarSharp,
+      title: "Newborn Hearing Screening",
+      description: "Specialized hearing tests for newborns to ensure early detection and treatment of hearing-related issues."
+    },
+    {
+      icon: FaUserMd,
+      title: "Consultation",
+      description: "Professional medical consultations with experienced doctors for various health concerns and medical advice."
+    },
+    {
+      icon: FaEye,
+      title: "Ears, Nose, and Throat (ENT)",
+      description: "Specialized ENT services for diagnosis and treatment of ear, nose, throat, and related head and neck conditions."
+    },
+    {
+      icon: FaFemale,
+      title: "OB-Gyne",
+      description: "Comprehensive obstetrics and gynecology services including women's health, pregnancy care, and reproductive health."
+    },
+    {
+      icon: FaMedkit,
+      title: "General Medicine",
+      description: "Primary healthcare services covering general medical conditions, preventive care, and health maintenance."
     },
     {
       icon: FaHeart,
-      title: "Breastfeeding Support",
-      description: "Lactation consultation and breastfeeding education for new mothers with ongoing guidance and support."
+      title: "Internal Medicine",
+      description: "Specialized internal medicine services focusing on adult diseases, chronic conditions, and complex medical cases."
+    },
+    {
+      icon: FaBed,
+      title: "Lying-in",
+      description: "Comfortable maternity ward services providing excellent care for mothers during delivery and recovery period."
+    },
+    {
+      icon: GiScalpel,
+      title: "Circumcision",
+      description: "Safe and professional circumcision procedures performed by experienced medical professionals with proper aftercare."
     }
   ];
+
+  const displayedServices = showAllServices ? services : services.slice(0, 6);
+
+  const toggleServices = () => {
+    setShowAllServices(!showAllServices);
+  };
 
   return (
     <section id="services" className="py-20 bg-white">
@@ -46,7 +100,7 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
+          {displayedServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div key={index} className="professional-card text-center group animate-fade-in-up hover:scale-105 transition-all duration-300">
@@ -68,25 +122,48 @@ export default function Services() {
           })}
         </div>
 
-        {/* Call to Action */}
+        {/* See More/See Less Button */}
+        <div className="text-center mt-12">
+          <button
+            onClick={toggleServices}
+            className={`
+              inline-flex items-center px-6 py-3 text-blue-600 hover:text-blue-800 
+              font-medium transition-all duration-300 rounded-lg hover:bg-blue-50
+              ${!showAllServices ? 'animate-bounce' : ''}
+            `}
+          >
+            {showAllServices ? (
+              <>
+                <FaChevronUp className="mr-2" />
+                See Less
+              </>
+            ) : (
+              <>
+                <FaChevronDown className="mr-2" />
+                See More Services
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Service Availability Schedule */}
         <div className="section-card text-center mt-16 bg-gradient-light">
           <div className="max-w-3xl mx-auto">
             <div className="icon-circle mx-auto mb-6">
               <FaCalendarCheck />
             </div>
-            <h3 className="subsection-title mb-4">Ready to Schedule Your Appointment?</h3>
+            <h3 className="subsection-title mb-4">Service Availability Schedule</h3>
             <p className="text-lg text-gray-600 mb-6">
-              Our experienced medical team is here to provide you with the best possible care. 
-              Contact us today to schedule your consultation.
+              Check our service availability and schedule. View our doctors' schedules and laboratory operating hours 
+              to plan your visit accordingly.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="btn-primary">
-                <FaPhone className="mr-2" />
-                Call Now
-              </button>
-              <button className="btn-secondary">
-                <FaEnvelope className="mr-2" />
-                Send Message
+              <button 
+                className="btn-primary"
+                onClick={() => window.open('https://anacondajuts95.github.io/ERS-Schedule/', '_blank')}
+              >
+                <FaUserMd className="mr-2" />
+                General Schedule
               </button>
             </div>
           </div>

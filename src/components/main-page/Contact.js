@@ -1,22 +1,22 @@
+"use client";
+
 import {
   FaMapMarkerAlt,
-  FaPhone,
   FaEnvelope,
   FaClock,
   FaInfoCircle,
-  FaPaperPlane,
-  FaUser,
+  FaFacebookF,
   FaExclamationTriangle
 } from "react-icons/fa";
-import { FaCommentDots, FaShield } from "react-icons/fa6";
+import { FaCommentDots } from "react-icons/fa6";
 
 export default function Contact() {
   const contactInfo = [
     {
       icon: FaMapMarkerAlt,
       title: "Address",
-      content: "123 Healthcare Avenue",
-      subtitle: "Medical District, City 12345"
+      content: "Brgy. Luciano (Bitangan), Indang Road",
+      subtitle: "Trece Martires, Cavite, 4109"
     },
     // TODO: Ask for phone number to be placed here
     // {
@@ -34,7 +34,7 @@ export default function Contact() {
     {
       icon: FaClock,
       title: "Hours",
-      content: "24/7 Emergency Care",
+      content: "24/7 Emergency Maternal Care",
       subtitle: "Regular Hours: 8:00 AM - 5:00 PM"
     }
   ];
@@ -108,82 +108,40 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="section-card">
-            <h3 className="subsection-title mb-6 flex items-center">
-              <div className="icon-circle mr-4">
-                <FaPaperPlane />
-              </div>
-              Send us a Message
-            </h3>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <FaUser className="mr-2 text-blue-600 inline" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                    className="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  />
+          {/* Contact Options */}
+          <div className="space-y-8">
+            {/* Facebook Contact */}
+            <div className="section-card">
+              <h3 className="subsection-title mb-6 flex items-center">
+                <div className="icon-circle mr-4">
+                  <FaFacebookF />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <FaEnvelope className="mr-2 text-blue-600 inline" />
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="your.email@example.com"
-                    required
-                    className="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  />
+                Message Us on Facebook
+              </h3>
+              
+              <div className="text-center">
+                <div className="bg-blue-50 p-8 rounded-lg mb-6">
+                  <div className="icon-circle mx-auto mb-4 bg-blue-600 text-white">
+                    <FaCommentDots />
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-800 mb-4">
+                    For Concerns & Clarifications
+                  </h4>
+                  <p className="text-gray-600 mb-6">
+                    Get in touch with us through our official Facebook page for any questions, 
+                    concerns, or clarifications about our services.
+                  </p>
+                  <button 
+                    className="btn-primary inline-flex items-center hover:scale-105 transition-all duration-300"
+                    // TODO: Add Facebook Page link here - replace '#' with actual Facebook page URL
+                    onClick={() => window.open('https://www.facebook.com/ERSMaternity', '_blank')}
+                  >
+                    <FaFacebookF className="mr-2" />
+                    Message on Facebook
+                  </button>
                 </div>
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaPhone className="mr-2 text-blue-600 inline" />
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  placeholder="(555) 123-4567"
-                  className="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <FaCommentDots className="mr-2 text-blue-600 inline" />
-                  Message *
-                </label>
-                <textarea
-                  placeholder="Please describe how we can help you..."
-                  rows="5"
-                  required
-                  className="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-vertical"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="btn-primary w-full py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
-              >
-                <FaPaperPlane className="mr-2" />
-                Send Message
-              </button>
-
-              <p className="text-sm text-gray-500 text-center">
-                <FaShield className="mr-1 text-green-500 inline" />
-                Your information is secure and will never be shared with third
-                parties.
-              </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
