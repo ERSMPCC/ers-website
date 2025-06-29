@@ -112,7 +112,7 @@ export default function Contact() {
           <div className="space-y-8">
             {/* Facebook Contact */}
             <div className="section-card">
-              <h3 className="subsection-title mb-6 flex items-center">
+              <h3 className="subsection-title mb-6 flex flex-row items-center">
                 <div className="icon-circle mr-4">
                   <FaFacebookF />
                 </div>
@@ -133,7 +133,6 @@ export default function Contact() {
                   </p>
                   <button 
                     className="btn-primary inline-flex items-center hover:scale-105 transition-all duration-300"
-                    // TODO: Add Facebook Page link here - replace '#' with actual Facebook page URL
                     onClick={() => window.open('https://www.facebook.com/ERSMaternity', '_blank')}
                   >
                     <FaFacebookF className="mr-2" />

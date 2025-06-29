@@ -5,8 +5,6 @@ import {
   FaStethoscope, 
   FaPhone, 
   FaList, 
-  FaBriefcaseMedical, 
-  FaCheckCircle, 
   FaAmbulance, 
   FaEnvelope,
   FaFacebookF,
@@ -23,11 +21,11 @@ export default function Footer() {
     { name: "Contact", href: "#contact", icon: FaPhone }
   ];
 
-  const services = [
-    "Prenatal Care",
-    "Delivery Services", 
-    "Postnatal Care",
-    "Emergency Care"
+  const hotlineNumbers = [
+    { station: "Office/Billing", number: "" },
+    { station: "Ward/Nurses Station", number: "" },
+    { station: "OPD", number: "" },
+    { station: "Laboratory", number: "09683352145" }
   ];
 
   return (
@@ -51,7 +49,8 @@ export default function Footer() {
                 Providing quality maternal and newborn care with compassion and expertise. 
                 We're committed to the health and well-being of mothers and babies in our community.
               </p>
-              <div className="flex space-x-4">
+              {/* TODO: ASK FOR ERSMPCC SOCIAL MEDIA */}
+              {/* <div className="flex space-x-4">
                 <a href="#" className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110">
                   <FaFacebookF className="text-white" />
                 </a>
@@ -64,7 +63,7 @@ export default function Footer() {
                 <a href="#" className="bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 hover:scale-110">
                   <FaLinkedinIn className="text-white" />
                 </a>
-              </div>
+              </div> */}
             </div>
 
             {/* Quick Links */}
@@ -91,19 +90,21 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Hotline Numbers */}
             <div>
               <h4 className="text-xl font-bold text-white mb-6 flex items-center">
-                <FaBriefcaseMedical className="mr-2" />
-                Our Services
+                <FaPhone className="mr-2" />
+                Hotline Numbers
               </h4>
               <ul className="space-y-3">
-                {services.map((service, index) => (
+                {hotlineNumbers.map((hotline, index) => (
                   <li key={index}>
-                    <span className="text-blue-200 flex items-center">
-                      <FaCheckCircle className="mr-3 w-4 text-green-300" />
-                      {service}
-                    </span>
+                    <div className="text-blue-200 flex items-center justify-between">
+                      <span className="font-medium text-white text-sm">{hotline.station}:</span>
+                      <span className="text-sm">
+                        {hotline.number || "Coming Soon"}
+                      </span>
+                    </div>
                   </li>
                 ))}
               </ul>
