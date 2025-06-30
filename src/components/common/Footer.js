@@ -23,9 +23,9 @@ export default function Footer() {
 
   const hotlineNumbers = [
     { station: "Office/Billing", number: "" },
-    { station: "Ward/Nurses Station", number: "" },
-    { station: "OPD", number: "" },
-    { station: "Laboratory", number: "09683352145" }
+    { station: "Ward/Nurses Station", number: "(+63) 9101235526" },
+    { station: "OPD", number: "(+63) 9704716507" },
+    { station: "Laboratory", number: "(+63) 9683352145" }
   ];
 
   return (
@@ -102,7 +102,7 @@ export default function Footer() {
                     <div className="text-blue-200 flex items-center justify-between">
                       <span className="font-medium text-white text-sm">{hotline.station}:</span>
                       <span className="text-sm">
-                        {hotline.number || "Coming Soon"}
+                        {hotline.number || "-"}
                       </span>
                     </div>
                   </li>
@@ -121,14 +121,14 @@ export default function Footer() {
                   <FaAmbulance className="text-white text-xl" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-xl font-bold text-white">24/7 Emergency Care</h4>
+                  <h4 className="text-xl font-bold text-white">24/7 Emergency Maternal Care</h4>
                   <p className="text-blue-200">We're here when you need us most</p>
                 </div>
               </div>
               <div className="text-center md:text-right">
                 <p className="text-blue-200 mb-1">Emergency Hotline:</p>
                 <a href="tel:555-911-HELP" className="text-3xl font-bold text-white hover:text-blue-200 transition-colors">
-                  (555) 911-HELP
+                  (+63) 9101235526
                 </a>
               </div>
             </div>

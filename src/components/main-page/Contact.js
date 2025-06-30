@@ -100,8 +100,8 @@ export default function Contact() {
                   </h4>
                   <p className="text-red-700 text-sm">
                     For medical emergencies, please call{" "}
-                    <strong>(555) 911-HELP</strong> immediately or visit our
-                    emergency department. We're available 24/7 for urgent care.
+                    <strong>(+63) 9101235526</strong> immediately or visit our
+                    emergency department.
                   </p>
                 </div>
               </div>
