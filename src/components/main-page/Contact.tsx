@@ -10,8 +10,15 @@ import {
 } from "react-icons/fa";
 import { FaCommentDots } from "react-icons/fa6";
 
+interface ContactInfoItem {
+  icon: React.ComponentType<any>;
+  title: string;
+  content: string;
+  subtitle: string;
+}
+
 export default function Contact() {
-  const contactInfo = [
+  const contactInfo: ContactInfoItem[] = [
     {
       icon: FaMapMarkerAlt,
       title: "Address",
@@ -146,4 +153,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+} 

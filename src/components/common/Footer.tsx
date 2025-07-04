@@ -13,15 +13,26 @@ import {
   FaLinkedinIn
 } from 'react-icons/fa';
 
+interface QuickLink {
+  name: string;
+  href: string;
+  icon: React.ComponentType<any>;
+}
+
+interface HotlineNumber {
+  station: string;
+  number: string;
+}
+
 export default function Footer() {
-  const quickLinks = [
+  const quickLinks: QuickLink[] = [
     { name: "Home", href: "#home", icon: FaHome },
     { name: "About", href: "#about", icon: FaInfoCircle },
     { name: "Services", href: "#services", icon: FaStethoscope },
     { name: "Contact", href: "#contact", icon: FaPhone }
   ];
 
-  const hotlineNumbers = [
+  const hotlineNumbers: HotlineNumber[] = [
     { station: "Office/Billing", number: "" },
     { station: "Ward/Nurses Station", number: "(+63) 9101235526" },
     { station: "OPD", number: "(+63) 9704716507" },

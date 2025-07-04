@@ -5,11 +5,19 @@ import { FaFlask, FaGift, FaShieldAlt, FaStethoscope, FaCamera, FaBaby, FaUserMd
 
 import { IoEarSharp } from "react-icons/io5";
 import { GiScalpel } from "react-icons/gi";
+import { ServicesModal } from "./services/ServicesModal";
+
+interface Service {
+  icon: React.ComponentType<any>;
+  title: string;
+  description: string;
+}
 
 export default function Services() {
   const [showAllServices, setShowAllServices] = useState(false);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
-  const services = [
+  const services: Service[] = [
     {
       icon: FaFlask,
       title: "Laboratory Services",
@@ -88,6 +96,14 @@ export default function Services() {
     setShowAllServices(!showAllServices);
   };
 
+  const openModal = (service: Service) => {
+    setSelectedService(service);
+  };
+
+  const closeModal = () => {
+    setSelectedService(null);
+  };
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -103,7 +119,7 @@ export default function Services() {
           {displayedServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="professional-card text-center group animate-fade-in-up hover:scale-105 transition-all duration-300">
+              <div key={index} className="professional-card text-center group animate-fade-in-up hover:scale-105 transition-all duration-300" onClick={() => openModal(service)}>
                 <div className="icon-circle mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <IconComponent />
                 </div>
@@ -112,7 +128,7 @@ export default function Services() {
                 
                 {/* Service highlight */}
                 <div className="mt-6 pt-4 border-t border-gray-100">
-                  <button className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 flex items-center mx-auto">
+                  <button className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 flex items-center mx-auto" onClick={(e) => { e.stopPropagation(); openModal(service); }}>
                     Learn More
                     <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
@@ -168,6 +184,19 @@ export default function Services() {
             </div>
           </div>
         </div>
+
+        {selectedService && (
+          <ServicesModal
+            isOpen={true}
+            onClose={closeModal}
+            service={{
+              icon: <selectedService.icon />,
+              name: selectedService.title,
+              shortDescription: selectedService.description,
+              description: selectedService.description,
+            }}
+          />
+        )}
       </div>
     </section>
   );
