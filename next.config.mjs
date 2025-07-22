@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const repo = 'ers-website'
-const assetPrefix = `/${repo}/`
-const basePath = `/${repo}`
+const assetPrefix = process.env.NODE_ENV === 'production' ? `/${repo}/` : ''
+const basePath = process.env.NODE_ENV === 'production' ? `/${repo}` : ''
 
 const nextConfig = {
   output: 'export',
@@ -10,14 +10,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Enable path mapping
-  experimental: {
-    // This ensures the @ alias works properly
-  },
-  // Add webpack config if needed
-  webpack: (config) => {
-    return config;
-  },
+  trailingSlash: true,
 };
 
 export default nextConfig; 
