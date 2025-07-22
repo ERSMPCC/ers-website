@@ -1,6 +1,6 @@
 import { FaUserMd, FaUsers, FaBaby, FaCalendarAlt, FaAmbulance, FaAward, FaHeart } from 'react-icons/fa';
 
-export default function About() {
+export function About() {
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">

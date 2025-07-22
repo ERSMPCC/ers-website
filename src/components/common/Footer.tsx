@@ -7,10 +7,6 @@ import {
   FaList, 
   FaAmbulance, 
   FaEnvelope,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn
 } from 'react-icons/fa';
 
 interface QuickLink {
@@ -24,7 +20,7 @@ interface HotlineNumber {
   number: string;
 }
 
-export default function Footer() {
+export function Footer() {
   const quickLinks: QuickLink[] = [
     { name: "Home", href: "#home", icon: FaHome },
     { name: "About", href: "#about", icon: FaInfoCircle },

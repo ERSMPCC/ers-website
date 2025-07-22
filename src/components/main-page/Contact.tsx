@@ -17,7 +17,7 @@ interface ContactInfoItem {
   subtitle: string;
 }
 
-export default function Contact() {
+export function Contact() {
   const contactInfo: ContactInfoItem[] = [
     {
       icon: FaMapMarkerAlt,

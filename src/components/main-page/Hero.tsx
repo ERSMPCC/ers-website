@@ -1,6 +1,6 @@
 import { FaHeart, FaCalendarCheck, FaInfoCircle } from 'react-icons/fa';
 
-export default function Hero() {
+export function Hero() {
   return (
     <section id="home" className="bg-gradient-primary text-white text-center pt-32 pb-40 mt-[72px] relative overflow-hidden">
       {/* Background pattern overlay */}

@@ -1,6 +1,6 @@
 import { FaHospital, FaHome, FaInfoCircle, FaStethoscope, FaPhone, FaBars } from 'react-icons/fa';
 
-export default function Navbar() {
+export function Navbar() {
   return (
     <header className="bg-white shadow-lg fixed w-full top-0 z-50 border-b-2 border-blue-100">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">

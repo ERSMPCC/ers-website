@@ -13,7 +13,7 @@ interface Service {
   description: string;
 }
 
-export default function Services() {
+export function Services() {
   const [showAllServices, setShowAllServices] = useState(false);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
